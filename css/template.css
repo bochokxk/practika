@@ -58,7 +58,7 @@ h1{
 
 .header{background-color: #434242;}
 
-.header .logo{padding: 5px 0;}
+.header .logo{padding: 5px 0; text-align: right; display: flex; justify-content: flex-end; align-items: center;}
 
 .header .logo img{height:40px;}
 
