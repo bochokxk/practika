@@ -175,4 +175,147 @@ h1{
     100% { opacity:1;margin-left:0;}
 }
 
+a{
+    text-decoration: none;
+    color:#333;
+}
 
+a:hover{
+    color:#00CB84;
+}
+
+.w20{width:20%;}
+.w60{width:60%;}
+.ac{text-align: center;}
+.ptb20{padding: 20px 0;}
+.ptb30{padding: 30px 0;}
+
+#spinner{
+    background: #919fa640 url(../images/loader.gif) no-repeat;
+    background-position: center;
+    background-size: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+}
+
+.table table{
+    width: 100%;
+    text-align: right;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    background: #fff;
+    font-size: 14px;
+    border-collapse: collapse;
+}
+
+.table table th{
+    padding: 10px;  
+}
+
+.table table td{
+    padding: 8px 10px;
+    border-top: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+}
+
+.table table tr:nth-child(odd) td{
+    background-color: #f6f6f6;
+}
+
+.table table .id{
+    width:5%;
+    text-align: center;
+}
+
+.empty{text-align: center; padding: 20px; color: #999;}
+
+input[type=date]{
+    background: #F6F9FE;
+    height: 40px;
+    border: 1px solid #D4D9DF;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.flex.panel{
+    display: flex;
+}
+
+.popup-back{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: #00000033;
+}
+
+.popup{
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    z-index: 10;
+    width: 100%;
+    max-width: 500px;
+    margin-left: -250px;
+    background-color: #fff;
+    opacity: 1;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.popup .head-popup{
+    background-color: #e4e8ec;
+    padding: 0 20px;
+    display: flex;
+}
+
+.popup .head-title{
+    font-weight: bold;
+}
+
+.popup-inner{
+    padding: 25px;
+    height:100%;
+    overflow-x: auto;
+}
+
+.popup .botBtns{
+    margin:20px 0 0;
+    display: flex;
+}
+
+.popup .botBtns a,
+.popup .botBtns button{
+    height: 40px;
+    padding: 0 20px;
+    background: #00CB84;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    margin-right: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.popup .botBtns a:hover,
+.popup .botBtns button:hover{
+    background-color: #1f888e;
+}
+
+.popup .botBtns a:active,
+.popup .botBtns button:active{
+    background-color: #1f4b8e;
+}
+
+.w80{width:80%;}
+.ptb20{padding: 20px 0;}
