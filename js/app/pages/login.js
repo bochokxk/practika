@@ -7,7 +7,7 @@ export const login = {
   },
   mounted: function(){
     this.img = this.randomIntFromInterval(1,7);
-    this.parent = this.$parent.$parent;
+    this.parent = this.$root;
   },
   methods: {
     randomIntFromInterval: function (min, max) {
