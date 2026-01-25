@@ -175,7 +175,4 @@ h1{
     100% { opacity:1;margin-left:0;}
 }
 
-@media(max-width:868px){
-    #right-area{display:none;}
-    .w40,.w60{width:100% !important;}
-}
+
