@@ -1,4 +1,5 @@
 import {router} from './router.js';
+import {msg} from './widgets/msg.js';
 
 document.addEventListener('DOMContentLoaded', function(){
   const main = {
@@ -79,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function(){
   };
 
   var app = Vue.createApp(main)
+  .component('msg', msg)
   .use(router)
   .mount('#content');
 });
