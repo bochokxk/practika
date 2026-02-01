@@ -22,6 +22,7 @@ export const campaign = {
       this.parent.logout();
     }
     this.get();
+    this.GetFirstAndLastDate();
 
   },
   methods:{
@@ -483,3 +484,4 @@ export const campaign = {
     </div>
   `
 };
+
