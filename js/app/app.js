@@ -3,6 +3,7 @@ import {msg} from './widgets/msg.js';
 import {popup} from './widgets/popup.js';
 import {header} from './widgets/header.js';
 import {toogle} from './widgets/toogle.js';
+import {img} from './widgets/img.js';
 document.addEventListener('DOMContentLoaded', function(){
   const main = {
     data() {
@@ -31,14 +32,10 @@ document.addEventListener('DOMContentLoaded', function(){
         router.isReady().then(() => {
           if(window.localStorage.getItem('user')){
             self.user = JSON.parse(window.localStorage.getItem('user'));
-            if(self.$route['path'] != '/' && self.user.type == 'admin'){
+            if(self.$route['path'] == '/' && self.user.type == 'admin'){
               self.page('/campaigns');
-            } else if(!['campaigns', '/campaign', '/users', '/user'].includes(self.$route['path']) && self.user.type!='admin'){
+            } else if(!['campaigns', '/campaign', '/users', '/user'].includes(self.$route['path']) && !self.$route['path'].startsWith('/campaign/') && self.user.type!='admin'){
               self.page('/statistics');
-            } else if(['campaigns', '/campaigns', '/users', '/user', '/statistics', '/payments', '/sites'].includes(self.$route['path']) && self.user.type=='admin'){
-              self.page();
-            } else if(['campaigns','campaigns', '/users', '/user', '/statistics', '/payments', '/sites'].includes(self.$route['path']) && self.user.type!='admin'){
-              self.page();
             }
           } else {
             self.page('/');
@@ -59,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function(){
         var fd = new FormData();
         
         for(var x in obj){
-          if(typeof obj[x]=='object' && x != 'img' && x != 'copy'){
+          if(typeof obj[x]=='object' && !(obj[x] instanceof File) && x != 'img' && x != 'copy'){
             for(var y in obj[x]){
               if(typeof obj[x][y]=='object'){
                 for(var z in obj[x][y]){
@@ -82,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function(){
   };
 
   var app = Vue.createApp(main)
+  .component('Image',img)
   .component('Header',header)
   .component('popup',popup)
   .component('msg', msg)
