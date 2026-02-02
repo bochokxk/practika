@@ -45,9 +45,14 @@ export const campaigns = {
       
       self.loader=1;
       axios.post(this.parent.url+"/site/getCampaigns?auth="+this.parent.user.auth,data).then(function(response){
-        self.data = response.data;
-        self.loader = 0;
-        if(self.iChart!=-1) self.line(self.data.items[self.iChart]);
+        if(response.data.error){
+          self.$refs.header.$refs.msg.alertFun(response.data.error);
+          self.loader = 0;
+        } else {
+          self.data = response.data;
+          self.loader = 0;
+          if(self.iChart!=-1) self.line(self.data.items[self.iChart]);
+        }
       }).catch(function(error){
         self.parent.logout();
       });
@@ -58,13 +63,17 @@ export const campaigns = {
       var data = self.parent.toFormData(self.parent.formData);
       
       axios.post(this.parent.url+"/site/actionCampaign?auth="+this.parent.user.auth,data).then(function(response){
-        self.$refs.new.active=0;
-        if(self.parent.formData.id){
-          self.$refs.header.$refs.msg.successFun("Successfully updated campaign!");
-        }else{
-          self.$refs.header.$refs.msg.successFun("Successfully added new campaign!");
+        if(response.data.error){
+          self.$refs.header.$refs.msg.alertFun(response.data.error);
+        } else {
+          self.$refs.new.active=0;
+          if(self.parent.formData.id){
+            self.$refs.header.$refs.msg.successFun("Successfully updated campaign!");
+          }else{
+            self.$refs.header.$refs.msg.successFun("Successfully added new campaign!");
+          }
+          self.get();
         }
-        self.get();
       }).catch(function(error){
         self.parent.logout();
       });

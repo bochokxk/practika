@@ -23,6 +23,7 @@ export const campaign = {
     }
     this.get();
     this.GetFirstAndLastDate();
+    
 
   },
   methods:{
@@ -484,4 +485,3 @@ export const campaign = {
     </div>
   `
 };
-
