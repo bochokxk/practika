@@ -493,6 +493,9 @@ input[type=date]{
 #user-top{
     padding: 18px 0 0;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 #user-top #user-circle{
@@ -504,7 +507,6 @@ input[type=date]{
     text-align: center;
     border-radius: 50px;
     display: inline-block;
-    margin-left: 6px;
     cursor: pointer;
 }
 
@@ -553,6 +555,10 @@ input[type=date]{
 
 #menu ul{
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
 }
 
 #menu li{
@@ -563,7 +569,10 @@ input[type=date]{
     font-size: 18px;
     color: #fff;
     padding: 27px;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
     -webkit-transition: .4s;
     transition: .4s;
     border-bottom: 5px solid #434242;

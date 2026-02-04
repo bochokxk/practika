@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function(){
             self.user = JSON.parse(window.localStorage.getItem('user'));
             if(self.$route['path'] == '/' && self.user.type == 'admin'){
               self.page('/campaigns');
-            } else if(!['campaigns', '/campaign', '/users', '/user'].includes(self.$route['path']) && !self.$route['path'].startsWith('/campaign/') && self.user.type!='admin'){
+            } else if(self.$route['path'] == '/' && self.user.type != 'admin'){
               self.page('/statistics');
             }
           } else {

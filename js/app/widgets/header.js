@@ -28,21 +28,21 @@ export const header = {
           <div class="w15 logo">
             <img :src="$root.url+'/app/views/images/logo.svg'" />
           </div>
-          <div class="w30">
+          <div class="w50">
             <div id="menu">
               <i class="fas fa-bars" @click="menu=1"></i>
               <ul :class="{active:menu==1}" v-if="$root.user && $root.user.type && $root.user.type=='admin'">
                 <li v-if="menu==1" class="ar"><i class="fas fa-times" @click="menu=0"></i></li>
-                <li><router-link :class="{'router-link-active':$route.path.search('user')==1}" to="/users"><i class="fas fa-users"></i> Users</router-link></li>
-                <li><router-link :class="{'router-link-active':$route.path.search('campaign')==1}" to="/campaigns"><i class="fas fa-ad"></i> Campaigns</router-link></li>
+                <li><router-link :class="{'router-link-active':$route.path.search('user')==1}" to="/users">Users <i class="fas fa-users"></i></router-link></li>
+                <li><router-link :class="{'router-link-active':$route.path.search('campaign')==1}" to="/campaigns">Campaigns <i class="fas fa-ad"></i></router-link></li>
               </ul>
               
               <ul :class="{active:menu==1}" v-if="$root.user && $root.user.type && $root.user.type!='admin'">
                 <li v-if="menu==1" class="ar"><i class="fas fa-times" @click="menu=0"></i></li>
-                <li><router-link to="/statistics"><i class="fas fa-chart-area"></i> Statistics</router-link></li>
-                <li><router-link to="/ads"><i class="fas fa-image"></i> Ads</router-link></li>
-                <li><router-link to="/sites"><i class="fab fa-chrome"></i> Sites</router-link></li>
-                <li><router-link to="/payments"><i class="fas fa-credit-card"></i> Payments</router-link></li>
+                <li><router-link to="/statistics">Statistics <i class="fas fa-chart-area"></i></router-link></li>
+                <li><router-link to="/ads">Ads <i class="fas fa-image"></i></router-link></li>
+                <li><router-link to="/sites">Sites <i class="fab fa-chrome"></i></router-link></li>
+                <li><router-link to="/payments">Payments <i class="fas fa-credit-card"></i></router-link></li>
               </ul>
             </div>
           </div>

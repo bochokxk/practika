@@ -23,8 +23,13 @@ export const login = {
         }
         if(response.data.user){
           self.parent.user = response.data.user;
-          self.parent.page('/campaigns');
           window.localStorage.setItem('user',JSON.stringify(self.parent.user));
+          // Редирект в зависимости от типа пользователя
+          if(self.parent.user.type == 'admin'){
+            self.parent.page('/campaigns');
+          } else {
+            self.parent.page('/statistics');
+          }
         }
       }).catch(function(error){
         console.log('errors : ',error);
